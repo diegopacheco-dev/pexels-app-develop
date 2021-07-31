@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from 'react'
+import Galery from './components/galery/Galery'
+import SearchImage from './components/searchImage/SearchImage'
+import {  getImages, getImagesBySearch } from './services/pexelsApi'
 
-function App() {
+const App = () => {
+
+
+  const [images, setImages] = useState([]);
+
+    useEffect(() => {
+        getImages().then(data => {
+          setImages(data)
+        });
+
+    }, [])
+
+  const handleSearchImg = (word) => {
+    getImagesBySearch(word).then(data => {
+      setImages(data)
+    })
+  }
+
+
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <SearchImage handleSearchImg={handleSearchImg} />
+      <Galery images={images}/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

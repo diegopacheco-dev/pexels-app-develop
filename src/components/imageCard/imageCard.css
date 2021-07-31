@@ -1,0 +1,8 @@
+.imageCard {
+    width: 100%;
+    border-radius: 1.3em;
+}
+
+.imageCard:hover {
+    opacity: 0.8;
+}
