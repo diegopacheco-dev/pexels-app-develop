@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import "./galery.css";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import ImageCard from "../imageCard/ImageCard";
-import LazyLoad from "react-lazyload";
 
 const Galery = ({ images }) => {
   const styles = {
@@ -20,10 +19,8 @@ const Galery = ({ images }) => {
       >
         <Masonry gutter="15px">
           {images.map((image) => {
-            return <LazyLoad width="100%" offsetVertical={200}>
-                <ImageCard image={image} key={image.id} />
+            return <ImageCard image={image} key={image.id} />
 
-            </LazyLoad>
           })}
         </Masonry>
       </ResponsiveMasonry>
