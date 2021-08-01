@@ -18,6 +18,7 @@ const Galery = ({ images }) => {
         columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3, 1200: 4 }}
       >
         <Masonry gutter="15px">
+          
           {images.map((image) => {
             return <ImageCard image={image} key={image.id} />
 

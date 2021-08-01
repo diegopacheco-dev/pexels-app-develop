@@ -26,7 +26,12 @@ const App = () => {
   return (
     <div>
       <SearchImage handleSearchImg={handleSearchImg} />
-      <Galery images={images}/>
+      {
+        images.length > 0 ?
+        <Galery images={images}/>
+        :
+        <p style={{"textAlign": "center", "fontSize": "1.5em"}} >Sin resultados</p>
+      }
     </div>
   )
 }

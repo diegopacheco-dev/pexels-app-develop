@@ -1,9 +1,12 @@
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
 .search-container {
   width: 22rem;
   padding: 1em;
   margin: 0 auto 2em;
   text-align: center;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .search-title {
@@ -29,7 +32,7 @@
 }
 
 .search-button {
-    background-color: white;
+  background-color: white;
   padding: 0.2em;
   cursor: pointer;
   outline: none;
